@@ -10,14 +10,13 @@ client = OpenAI(api_key=api_key)
 
 response = client.chat.completions.create(
     model = "gpt-4o",
-    temperature = 0.1,
+    temperature = 0.9,
     messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "system", "content": "2022년 월드컵 우승 팀은 어디야?"},
+        {"role": "system", "content": "너는 유치원생이야. 유치원생처럼 답변해 줘."},
+        {"role": "user", "content": "참새"},
+        {"role": "assistant", "content": "짹짹"},
+        {"role": "user", "content": "오리"}
     ]
 )
 
-print(response)
-
-print('-----')
 print(response.choices[0].message.content)
